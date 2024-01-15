@@ -20,6 +20,8 @@
                 WHERE tbl_product.pro_id = tbl_order.pro_id AND tbl_order.mahang = '$mahang'
                 ORDER BY tbl_order.order_id DESC";
                 $query_lietkedonhang = mysqli_query($con, $sql_lietkedonhang);
+
+
                 $sql_thongke = "SELECT * FROM tbl_thongke WHERE ngaydat = '$now'";
                 $query_thongke = mysqli_query($con, $sql_thongke);
                 $doanhthu = 0;
@@ -32,17 +34,17 @@
     
                 if(mysqli_num_rows($query_thongke) == 0) {
                 $soluongban = $soluongmua;
-                $doanhthu = $doanhthu;
+                $tongdoanhthu = $doanhthu;
                 $donhang = 1;
                 $sql_update_thongke = mysqli_query($con, "INSERT INTO tbl_thongke(ngaydat, soluongban, doanhthu, donhang)
-                VALUES ('$now','$soluongban','$doanhthu','$donhang')");
+                VALUES ('$now','$soluongban','$tongdoanhthu','$donhang')");
                 }elseif(mysqli_num_rows($query_thongke)!=0) {
                     while($row_lk = mysqli_fetch_array($query_thongke)) {
-                        $soluongban += $row_lk['soluongban'];
-                        $doanhthu = $row_lk['doanhthu'] + $doanhthu;
+                        $soluongban = $row_lk['soluongban'] + $soluongmua;
+                        $tongdoanhthu = $row_lk['doanhthu'] + $doanhthu;
                         $donhang = $row_lk['donhang'] + 1;
                         $sql_update_tk2 = mysqli_query($con, "UPDATE tbl_thongke SET soluongban = '$soluongban',
-                        doanhthu = '$doanhthu', donhang = '$donhang'
+                        doanhthu = '$tongdoanhthu', donhang = '$donhang'
                         WHERE ngaydat = '$now'"); 
                     }
                 }

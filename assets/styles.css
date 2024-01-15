@@ -69,6 +69,14 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+.btn {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    padding: 10px;
+    background-color: var(--color-primary);
+}
+
 /* header */
 #header {
     position: fixed;

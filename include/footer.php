@@ -5,7 +5,7 @@
                     <div class="content-footer">
                         <p>
                             số 32, ấp Mỹ Lộc, xã Mỹ Khánh, huyện Phong Điền,
-                            Tỉnh Cần Thơ
+                            TP.Cần Thơ
                         </p>
                         <p><b>Điện Thoại:</b>0946910884</p>
                         <p><b>Email:</b>hootran84@gmail.com</p>
