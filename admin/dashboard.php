@@ -84,7 +84,7 @@
             element: 'chart',
             xkey: 'date',
             ykeys: ['date', 'order', 'sales', 'quantity'],
-            labels: ['Đơn hàng', 'Doanh thu', 'Số lượng bán']
+            labels: ['Ngày đặt hàng', 'Đơn hàng', 'Doanh thu', 'Số lượng bán']
             });
 
             $('.select-date').change(function() {
